@@ -1,0 +1,5 @@
+*.log
+*.csv
+*.gz
+.grunt
+node_modules
