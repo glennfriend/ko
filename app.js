@@ -1,4 +1,8 @@
+/* --------------------------------------------------------------------------------
+    global
+-------------------------------------------------------------------------------- */
 require('./functions');
+
 
 /* --------------------------------------------------------------------------------
     include all
@@ -14,12 +18,6 @@ var logger      = require('koa-logger');
 // http            = require('http');
 
 
-
-
-
-
-
-
 /* --------------------------------------------------------------------------------
     init
 -------------------------------------------------------------------------------- */
@@ -27,7 +25,7 @@ var logger      = require('koa-logger');
 app.use(logger());
 app.use(router);
 
-//var dbName = 'test2014';
+
 
 /* --------------------------------------------------------------------------------
     router
@@ -46,10 +44,11 @@ app.get( '/demo/user/:user', function *() {
 });
 
 app.get( '/db/list', function *() {
-    var controll = require('./controller/db');
-    yield controll.list( this );
+    yield require('./controller/db').list(this);
 });
-
+app.get( '/db/create', function *() {
+    yield require('./controller/db').create(this);
+});
 
 
 

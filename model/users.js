@@ -27,7 +27,9 @@ exports.list = function *( condition, option )
     var html = '';
     var results = wrap( db.get(collection) );
     console.log ( results.count() );
-    return results.find({});
+    return results.find({
+        age: { $gt: 6 }
+    });
 
 
 /*
@@ -59,8 +61,44 @@ exports.list = function *( condition, option )
 
 };
 
+exports.create = function *()
+{
+    var random = function( from, to ) {
+        return Math.floor( Math.random() * to ) + from;
+    };
 
+    var randomName = function() {
+        var map = [
+            'alice',
+            'bob',
+            'carol',
+            'eve',
+            'erin',
+            'frank',
+        ];
+        return map[
+            Math.floor( Math.random() * map.length )
+        ];
+    };
 
+    var randomPhone = function() {
+        return '09' + random(0,9) + random(0,9) + '-'
+            + random(100000,999999);
+    };
+
+    var results = wrap( db.get(collection) );
+    var name = randomName();
+    return results.insert({
+        name: name,
+        phone: randomPhone(),
+        email: name + '@hotmail.com',
+        address: 'address',
+        age: random(10,80)
+    });
+
+};
+
+/*
 exports.schema = function *()
 {
     var schema = {
@@ -94,3 +132,4 @@ exports.index = function *()
 
     yield index;
 };
+*/

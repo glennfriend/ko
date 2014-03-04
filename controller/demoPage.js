@@ -4,12 +4,6 @@
 
 var fs = require('co-fs');
 
-var db = {
-    tobi: { name: 'tobi', species: 'ferret' },
-    loki: { name: 'loki', species: 'ferret' },
-    jane: { name: 'jane', species: 'ferret' }
-};
-
 var getView = function( file )
 {
     return './controller/views/demoPage/' + file + '.htm';

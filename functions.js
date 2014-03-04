@@ -1,7 +1,7 @@
 var config = require('./config.inc.js');
 
 /**
- *  create model
+ *  factory model
  */
 GLOBAL.FactoryModel = function ( modelName ) {
     if ( !modelName ) {
@@ -13,7 +13,7 @@ GLOBAL.FactoryModel = function ( modelName ) {
 };
 
 /**
- *  create model
+ *  factory db
  */
 GLOBAL.FactoryDb = function () {
     var db = config.database.name;

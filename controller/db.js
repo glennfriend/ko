@@ -3,7 +3,10 @@
     private
 -------------------------------------------------------------------------------- */
 
-
+// var getView = function( file )
+// {
+//     return './controller/views/demoPage/' + file + '.htm';
+// }
 
 
 /* --------------------------------------------------------------------------------
@@ -12,12 +15,20 @@
 
 exports.list = function *(app)
 {
-    var html = '';
     var users = FactoryModel('users');
      var value = yield users.list().next().value;
     // var value = yield users.list();
 
-    html = value;
-    app.body = html;
+    console.log('--------------');
+    console.log(value);
+    app.body = value;
+}
+
+exports.create = function *(app)
+{
+    var users = FactoryModel('users');
+    var value = yield users.create().next().value;
+
+    app.body = value;
 }
 
