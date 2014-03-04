@@ -3,7 +3,7 @@
     private
 -------------------------------------------------------------------------------- */
 
-// var db = 'test2014';
+
 
 
 /* --------------------------------------------------------------------------------
@@ -13,7 +13,7 @@
 exports.list = function *(app)
 {
     var html = '';
-    var users = CreateModel('users');
+    var users = FactoryModel('users');
      var value = yield users.list().next().value;
     // var value = yield users.list();
 

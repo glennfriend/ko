@@ -1,26 +1,21 @@
+require('./functions');
+
 /* --------------------------------------------------------------------------------
     include all
 -------------------------------------------------------------------------------- */
+// var config      = require('./config.inc.js');
 var app         = require('koa')();
 var router      = require('koa-router')(app);
-var render      = require('koa-render');
 var logger      = require('koa-logger');
-thunkify    = require('thunkify');
+//var render      = require('koa-render');
+//thunkify    = require('thunkify');
+//mongo = require('mongodb');
+// format = require('util').format;
 
-// mongoose        = require('mongoose');
-mongo = require('mongodb');
-monk = require('monk');
-format = require('util').format;
-
-http            = require('http');
-fs              = require('co-fs');
+//http            = require('http');
+//fs              = require('co-fs');
 
 
-CreateModel = function ( modelName ) {
-    var model = require('./model/' + modelName );
-    // console.log(model);
-    return model;
-};
 
 
 

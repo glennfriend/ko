@@ -2,6 +2,8 @@
     private
 -------------------------------------------------------------------------------- */
 
+var fs = require('co-fs');
+
 var db = {
     tobi: { name: 'tobi', species: 'ferret' },
     loki: { name: 'loki', species: 'ferret' },

@@ -2,11 +2,9 @@
     private
 -------------------------------------------------------------------------------- */
 
-var monk = require('monk');
 var wrap = require('co-monk');
-var db = monk('localhost/vcard3');
 var collection = 'users';
-
+var db = FactoryDb();
 
 /* --------------------------------------------------------------------------------
     public
@@ -19,15 +17,16 @@ exports.list = function *( condition, option )
     option.page         = option.page           || 1;
     option.itemPerPage  = option.itemPerPage    || 3;
     condition           = condition             || {};
-/*
+
     if ( -1 === option.page ) {
-        99999;
+        // TODO: get all
     }
-*/
+
 
     var objs = [];
     var html = '';
     var results = wrap( db.get(collection) );
+    console.log ( results.count() );
     return results.find({});
 
 
