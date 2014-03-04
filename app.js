@@ -8,12 +8,11 @@ var app         = require('koa')();
 var router      = require('koa-router')(app);
 var logger      = require('koa-logger');
 //var render      = require('koa-render');
-//thunkify    = require('thunkify');
-//mongo = require('mongodb');
+// thunkify    = require('thunkify');
+// mongo = require('mongodb');
 // format = require('util').format;
+// http            = require('http');
 
-//http            = require('http');
-//fs              = require('co-fs');
 
 
 
